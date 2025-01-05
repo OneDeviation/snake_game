@@ -22,10 +22,7 @@ class Snake:
         new_segment.color("white")
         new_segment.penup()
         if self.segments:
-            tail = self.segments[-1]
-            tail_x_pos = tail.xcor()
-            tail_y_pos = tail.ycor()
-            new_segment.goto(x=tail_x_pos, y=tail_y_pos)
+            new_segment.goto(self.segments[-1].position())
         self.segments.append(new_segment)
 
     def move(self):
